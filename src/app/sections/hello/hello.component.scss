@@ -1,0 +1,150 @@
+@import 'mixins/mixins';
+@import 'variables/variables';
+
+.hello-wrapper {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.hello-background {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background-image: url('/assets/images/First_section_background.png');
+  background-size: cover;
+  background-position: top left;
+}
+
+.hello-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.header {
+  @include flex(row, space-between, center, nowrap);
+  padding: 0 80px;
+  padding-top: 70px;
+}
+
+.menu__link {
+  color: $white;
+  font-weight: bold;
+  font-size: 24px;
+  margin-right: 40px;
+  transition: font-size 0.3s, color 0.3s;
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.language-tool {
+  position: relative;
+}
+
+.selected-language {
+  font-weight: bold;
+  font-size: 24px;
+  color: $primary;
+  transition: font-size 0.3s, color 0.3s;
+  cursor: pointer;
+  padding-right: 20px;
+  &:hover {
+    color: darken($primary, 15);
+    &::after {
+      border-top-color: darken($primary, 15);
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: calc(50% + 3px);
+    right: 0px;
+    transform: translate(0, -50%);
+    border: 6px solid transparent;
+    border-top: 6px solid $primary;
+    transition: all 0.3s;
+  }
+}
+
+.logo {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title__name {
+  font-size: 96px;
+  color: $white;
+  transition: font-size 0.3s;
+  letter-spacing: 2px;
+  @include flex(column);
+}
+
+.firstName {
+  font-family: $intro;
+  margin-bottom: -10px;
+}
+.lastName {
+  font-family: $intro;
+  padding-left: 76px;
+}
+
+.subTitle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(100%, -100%);
+  color: $white;
+  opacity: 0.3;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.go-down {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+  transition: all .3s;
+  cursor: pointer;
+
+  i {
+    display: inline-block;
+    color: $white;
+    font-size: 80px;
+    opacity: 0.63;
+    transform: rotate(90deg);
+    transition: opacity .3s;
+  }
+  
+  &:hover {
+    transform: translate(-50%, -12px);
+    i {
+      opacity: 1;
+    }
+  }
+}

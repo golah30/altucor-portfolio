@@ -1,0 +1,30 @@
+<div class="hello-wrapper">
+  <div class="hello-background"></div>
+  <div class="hello-content">
+    <header class="header">
+      <nav class="menu">
+        <button class="menu__link"
+                *ngFor="let item of menuItems; let i = index"
+                (click)="switchPage()">
+          {{ item }}
+        </button>
+      </nav>
+      <div class="language-tool">
+        <div class="selected-language">{{ currentLanguage }}</div>
+      </div>
+    </header>
+    <div class="title">
+      <h1 class="title__name">
+        <span class="firstName">{{ title.firstName }}</span>
+        <span class="lastName">{{ title.lastName }}</span>
+      </h1>
+      <span class="subTitle">{{ subTitle }}</span>
+    </div>
+    <div class="logo">
+      <img src="assets/images/logo.svg">
+    </div>
+    <div class="go-down">
+      <i class="icon-chevron-right"></i>
+    </div>
+  </div>
+</div>

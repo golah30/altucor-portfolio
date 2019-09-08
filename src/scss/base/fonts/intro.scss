@@ -1,0 +1,10 @@
+$intro_demo_path: "assets/fonts/intro/subset-IntroDemo-BlackCaps";
+
+@font-face {
+    font-family: 'Intro Demo Black Caps';
+    src: url('#{$intro_demo_path}.woff2') format('woff2'),
+        url('#{$intro_demo_path}.woff') format('woff'),
+        url('#{$intro_demo_path}.svg#IntroDemo-BlackCaps') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}

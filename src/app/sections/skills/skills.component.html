@@ -1,0 +1,14 @@
+<div class="skills-wrapper">
+  <div class="skills-background"></div>
+  <div class="skills-content">
+    <div class="heading">
+      <h1 class="heading__title">{{ heading }}</h1>
+      <p class="heading__caption">{{ caption }}</p>
+    </div>
+    <div class="skills">
+      <div class="skill-container" *ngFor="let skill of skills">
+        <app-skill [data]="skill"></app-skill>
+      </div>
+    </div>
+  </div>
+</div>
